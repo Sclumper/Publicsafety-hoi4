@@ -1,0 +1,133 @@
+characters={ 
+	PBS_council={
+		name=PBS_CHARACTER_COUNCIL
+		portraits={
+			civilian={
+				large="GFX_council"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			traits = { headstrong }
+			expire="1965.1.1.1"
+		}
+	}
+	PBS_makima={
+		name=PBS_CHARACTER_MAKIMA
+		portraits={
+			civilian={
+				large="GFX_makima"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			traits = { dictator }
+			desc=PBS_MAKIMA_DESC
+			expire="1965.1.1.1"
+		}			
+		advisor={
+			slot = political_advisor
+			allowed = {
+				original_tag = PBS
+			}
+			available = {
+					has_completed_focus = PBS_a_change_in_direction
+			}
+			traits = {
+				fascist_demagogue propaganda_expert 
+			}
+			do_effect = {
+				NOT = {
+					has_government = fascism 
+				}
+			}
+			ai_will_do = {
+				factor = 24.000
+			}
+		}
+	}
+PBS_denji_power={
+		name=PBS_CHARACTER_DEVILS
+		portraits={
+			civilian={
+				large="GFX_denji_power"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			traits = { dictator unpopular_monarch }
+			desc=PBS_DEVILS_DESC
+			expire="1965.1.1.1"
+		}
+	}	
+	PBS_aki_hayakawa={
+		name=PBS_CHARACTER_AKI
+		portraits={
+			army={
+				small="GFX_aki_small"
+				large=GFX_aki
+			}
+		}
+		advisor={
+			cost = 100
+			slot = theorist
+			idea_token = hisaichi_terauchi
+			ledger = army
+			allowed = {
+				original_tag = PBS
+			}
+			traits = {
+				military_theorist
+			}
+		}
+		
+		field_marshal={
+			traits={ politically_connected JAP_samurai_lineage offensive_doctrine }
+			skill=4
+			attack_skill=4
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=0
+		}
+	}
+	PBS_Himeno={
+		name=PBS_CHARACTER_HIMENO
+		portraits={
+			army={
+				small="GFX_himeno_small"
+				large=GFX_himeno
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = shunroku_hata
+			ledger = army
+			allowed = {
+				original_tag = PBS
+			}
+			traits = {
+				army_concealment_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		field_marshal={
+			traits={ JAP_samurai_lineage offensive_doctrine }
+			skill=4
+			attack_skill=3
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=4
+			legacy_id=0
+		}
+	} 	
+}			
+ 
+
+	
+		
+	

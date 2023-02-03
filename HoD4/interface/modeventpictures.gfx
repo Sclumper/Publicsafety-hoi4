@@ -1,0 +1,7 @@
+spriteTypes = {
+	
+	spriteType = {
+		name = "GFX_report_event_makima"
+		texturefile = "gfx/event_pictures/makima_report_event.dds"
+	}	
+}

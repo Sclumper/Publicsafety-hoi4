@@ -1,0 +1,30 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_makima"
+		texturefile = "gfx/leaders/PBS/makima.dds"
+	}
+		spriteType = {
+		name = "GFX_council"
+		texturefile = "gfx/leaders/PBS/council.dds"
+	}
+		spriteType = {
+		name = "GFX_aki"
+		texturefile = "gfx/leaders/PBS/aki.dds"
+	}	
+		spriteType = {
+		name = "GFX_aki_small"
+		texturefile = "gfx/interface/ideas/aki_small.dds"
+	}
+		spriteType = {
+		name = "GFX_himeno"
+		texturefile = "gfx/leaders/PBS/himeno.dds"
+	}		
+		spriteType = {
+		name = "GFX_himeno_small"
+		texturefile = "gfx/interface/ideas/himeno_small.dds"
+	}
+		spriteType = {
+		name = "GFX_denji_power"
+		texturefile = "gfx/leaders/PBS/denjipower.dds"	
+	}	
+}

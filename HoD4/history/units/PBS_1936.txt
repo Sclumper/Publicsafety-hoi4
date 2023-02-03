@@ -1,0 +1,86 @@
+﻿division_template = {
+	name = "Private Sector"
+	division_names_group = JAP_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+}
+division_template = {
+	name = "Devil Hunters"  
+	division_names_group = JAP_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	
+	support = {
+		artillery = { x = 0 y = 0 }
+	}	
+}
+
+units = {
+	division= { #"Devil Hunter"
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		
+		location = 7102
+		division_template = "Devil Hunters"
+		start_experience_factor = 1
+		start_equipment_factor = 1
+
+	}
+	division= {	# "Private Sector"
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 7217
+		division_template = "Private Sector" 
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+
+	}
+}
+
+##### No Notable Air Forces #####
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "PBS"
+		}
+		requested_factories = 1
+		progress = 0.54
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = CAS_equipment_1
+			creator = "PBS"
+		}
+		requested_factories = 2
+		progress = 0.54
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = "PBS"
+		}
+		requested_factories = 2
+		progress = 0.54
+		efficiency = 100
+	}		
+}
+#artillery_equipment_1 

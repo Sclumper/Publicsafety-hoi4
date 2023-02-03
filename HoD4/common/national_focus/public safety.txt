@@ -1,0 +1,207 @@
+﻿focus_tree = {
+	id = devilish_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = PBS
+		}
+	}
+	
+	default = no
+	
+	continuous_focus_position = { x = 50 y = 1000 }
+
+	focus = {
+		id = PBS_a_change_in_direction
+		#search_filters = {  }
+		icon = GFX_goal_generic_major_war
+		x = 14
+		y = 1
+		#relative_position_id = AST_empower_the_workers
+		
+		#allow_branch = {  }
+		available = {
+
+		}		
+		bypass = {
+
+		}
+		
+		cost = 1
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		select_effect = { add_political_power = 100 country_event = { id = public.safety.1 random_days = 7 } }
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}	
+			
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+
+				factor = 0
+			}
+		}		
+	}
+	
+	focus = {
+		id = PBS_makima_meets_hitohito
+		icon = GFX_goal_makima_takeover
+		x = 3
+		y = 1
+		relative_position_id = PBS_a_change_in_direction
+		
+		available = {
+
+		}		
+		bypass = {
+
+		}
+		
+		cost = 10
+		prerequisite = { focus = PBS_a_change_in_direction }
+		mutually_exclusive = { focus = PBS_the_worse_option }
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.15
+			}
+		PBS= {
+			country_event = { id = public.safety.1 }	
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+
+				factor = 0
+			}
+		}		
+	}
+	focus = {
+		id = PBS_the_worse_option
+		icon = GFX_goal_the_worse_option
+		x = -3
+		y = 1
+		relative_position_id = PBS_a_change_in_direction
+		
+		available = {
+
+		}		
+		bypass = {
+
+		}
+		
+		cost = 10
+		prerequisite = { focus = PBS_a_change_in_direction }
+		mutually_exclusive = { focus = PBS_makima_meets_hitohito }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.25
+				add_stability = -0.25
+			}	
+			hidden_effect: {
+			retire_ideology_leader = fascism
+			}
+		}
+		ai_will_do = {
+				factor = 0
+			}
+		}		
+	focus = {
+		id = PBS_strike_when_weak
+		icon = GFX_goal_generic_major_war
+		x = -0
+		y = 2
+		relative_position_id = PBS_a_change_in_direction
+		
+		available = {
+
+		}		
+		bypass = {
+
+		}
+		
+		cost = 20
+		prerequisite = { focus = PBS_makima_meets_hitohito focus = PBS_the_worse_option }
+		mutually_exclusive = { focus = PBS_the_right_path }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.09
+			}
+		puppet = JAP	
+			
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+
+				factor = 0
+			}
+		}		
+	}
+	focus = {
+		id = PBS_the_right_path
+		icon = GFX_goal_generic_major_war
+		x = 3
+		y = 1
+		relative_position_id = PBS_makima_meets_hitohito
+		
+		available = {
+
+		}		
+		bypass = {
+
+		}
+		
+		cost = 20
+		prerequisite = { focus = PBS_makima_meets_hitohito }
+		mutually_exclusive = { focus = PBS_strike_when_weak }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.25
+			}	
+			
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+
+				factor = 0
+			}
+		}		
+	}	
+}		

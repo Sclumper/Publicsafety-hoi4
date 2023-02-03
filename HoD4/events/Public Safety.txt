@@ -1,0 +1,94 @@
+﻿###########################
+# PBS Events
+###########################
+
+add_namespace = public.safety
+add_namespace = devils
+
+country_event = {
+	id = public.safety.1
+	title = "Makima Arrives"
+	desc = public.safety.1.d
+	picture = GFX_report_event_makima
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "It is a pleasure, Hitohito"
+		ai_chance = { factor = 90 }
+		promote_character = PBS_makima
+	}
+	option = { 
+		name = "Hm, Emperor? nothing more than a title..."
+		ai_chance = { factor = 10 }
+		country_event = { 
+		id = public.safety.2
+		random_days = 4
+		days = 1
+		}
+		complete_national_focus = PBS_a_change_in_direction
+	}
+} 	
+country_event = {
+	id = public.safety.2
+	title = "Meeting ends abruptly"
+	desc = public.safety.2.d
+	picture = GFX_report_event_makima
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Perhaps there is a better way"
+		ai_chance = { factor = 30 }
+	}
+	option = { 
+		name = "Oh no, the emperor is dead!"
+		ai_chance = { factor = 60 }
+		JAP = { kill_country_leader = yes }
+		hidden_effect = {
+			complete_national_focus = PBS_the_worse_option
+			country_event = { 
+				id = devils.1
+				random_days = 4
+				days = 1
+			}
+		}
+
+	}
+}
+country_event = {
+	id = devils.1
+	title = "Makima under house arrest!"
+	desc = devils.1.d
+	picture = GFX_report_event_makima
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Maybe demons are truly a better option!"
+		ai_chance = { factor = 70 }
+		stability_weekly = .025
+		hidden_effect = {
+			complete_national_focus = PBS_the_worse_option
+			set_cosmetic_tag = DPS
+			add_country_leader_role = {
+				Character = PBS_denji_power 
+				Promote_leader = yes 
+
+				Country_leader = {
+				ideology = nazism
+			}			
+			}	
+	}
+}	
+	option = { 
+		name = "What is this madness!?"
+		ai_chance = { factor = 30 }
+				add_stability = -0.25	
+		hidden_effect = {
+			complete_national_focus = PBS_the_worse_option
+			set_cosmetic_tag = DPS
+		}	
+	}
+}
+
